@@ -1,1 +1,1 @@
-{"version":3,"sources":["dash-10up-primary-category.css"],"names":[],"mappings":"AAAA","file":"dash-10up-primary-category.css","sourcesContent":[]}
+{"version":3,"sources":["dash-10up-primary-category.scss"],"names":[],"mappings":"AAAA;EACC,eAAc;CAUd;;AAXD;EAIE,kBAAiB;EACjB,eAAc;CACd;;AANF;EASE,YAAW;CACX","file":"dash-10up-primary-category.css","sourcesContent":["#primary-category-container {\r\n\tmargin: 10px 0;\r\n\r\n\tlabel {\r\n\t\tfont-weight: bold;\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\tselect {\r\n\t\twidth: 100%;\r\n\t}\r\n}"]}

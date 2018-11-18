@@ -1,2 +1,14 @@
+#primary-category-container {
+  margin: 10px 0;
+}
+
+#primary-category-container label {
+  font-weight: bold;
+  display: block;
+}
+
+#primary-category-container select {
+  width: 100%;
+}
 
 /*# sourceMappingURL=dash-10up-primary-category.css.map */
