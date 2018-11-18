@@ -1,0 +1,11 @@
+{
+	"name": "dash-10up-primary-category",
+	"description": "A plugin that allows a post author to choose a primary category.",
+	"version": "1.0.0",
+	"license": "MIT",
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"laravel-elixir": "^6.0.0-14",
+		"laravel-elixir-webpack-official": "^1.0.2"
+	}
+}

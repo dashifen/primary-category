@@ -1,0 +1,23 @@
+{
+    "name": "dash-10up/primary-category",
+    "description": "A plugin that allows a post author to choose a primary category.",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David Dashifen Kees",
+            "email": "dashifen@dashifen.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dashifen\\PrimaryCategory\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "7.2.*",
+        "dashifen/containers": "1.1.*",
+        "dashifen/wp-handler": "1.1.*"
+    }
+}
