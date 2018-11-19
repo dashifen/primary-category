@@ -14,24 +14,14 @@ export default {
 
 	data() {
 
-		// our dashPrimaryCategories object is the "state" of this
-		// component.  it has two properties:  chosen and choice.  the
-		// first is the list of chosen categories, and the second one
-		// is so we can remember the choice that we make on-screen
-		// until it's submitted and saved in the database.
+		// our dashPrimaryCategories object is the "state" of this component.
+		// it has one property:  chosen.  it's the list of categories that have
+		// been chosen for this post by marking their checkboxes.  by putting
+		// it here in the component's data, Vue will handle the necessary
+		// reactivity when it is altered; see primary-category-behaviors.js
+		// for more information on how this object is altered over time.
 
 		return window.dashPrimaryCategories
-	},
-
-	updated() {
-		if (this.choice) {
-
-			// if our component has updated but we've already made a
-			// choice, then we need to see if the choice we made is still
-			// in our list of options.  if so, we mark it primary
-
-
-		}
 	},
 
 	methods: {
@@ -46,17 +36,39 @@ export default {
 
 		rememberChoice(event) {
 
-			// to set our choice, we want to mutate the state of our
-			// component.  thus, we edit the actual state object here.
-			// had we been using Vuex, we'd use this.$store.commit
-			// but that's probably overkill for this plugin's purpose.
+			// to remember our choice, we want to find the option within
+			// the chosen categories that has the event's target's value
+			// as it's ID property.  the event's target is our <select>
+			// element; so we can get it's value using its options and
+			// selectedIndex properties.
 
 			const categoryId = Number(event.target.options[event.target.selectedIndex].value);
 
 			this.chosen.forEach((choice) => {
+
+				// here, we loop over each choice resetting each of their
+				// isPrimary properties to false except for the one that
+				// matches our chosen chosen category ID.  that one's flag
+				// gets set.
+
 				choice.isPrimary = choice.id === categoryId;
 			});
 		}
 	}
 };
 </script>
+
+<style scoped>
+div {
+	margin: 10px 0;
+}
+
+label {
+	font-weight: bold;
+	display: block;
+}
+
+select {
+	width: 100%;
+}
+</style>

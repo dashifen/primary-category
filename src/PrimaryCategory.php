@@ -56,13 +56,8 @@ class PrimaryCategory extends AbstractPluginHandler {
 		$isCreate = $screen->action === "add" && $screen->base === "post";
 		$isUpdate = ($_REQUEST["action"] ?? "") === "edit";
 		if ($isCreate || $isUpdate) {
-
-			// TODO: examine if array_flip() and isset() is faster
-
 			$taxonomies = get_object_taxonomies(get_post_type());
-
 			if (in_array("category", $taxonomies)) {
-				$this->enqueue("assets/dash-10up-primary-category.css");
 				$handle = $this->enqueue("assets/dash-10up-primary-category.js", ["jquery"]);
 
 				// now, before we're done, we need to tell the JS objects
