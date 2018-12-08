@@ -8,7 +8,7 @@ use Dashifen\WPHandler\Handlers\AbstractPluginHandler;
 use Dashifen\WPHandler\Hooks\HookException;
 
 class PrimaryCategory extends AbstractPluginHandler {
-	public const PRIMARY_CATEGORY_META_KEY = "_dash_10up_primary_category";
+	public const PRIMARY_CATEGORY_META_KEY = "_dash_primary_category";
 
 	/**
 	 * initialize
@@ -35,7 +35,7 @@ class PrimaryCategory extends AbstractPluginHandler {
 	 * @return string
 	 */
 	protected function getPluginDirectory(): string {
-		return "dash-10up-primary-category";
+		return "primary-category";
 	}
 
 
@@ -58,7 +58,7 @@ class PrimaryCategory extends AbstractPluginHandler {
 		if ($isCreate || $isUpdate) {
 			$taxonomies = get_object_taxonomies(get_post_type());
 			if (in_array("category", $taxonomies)) {
-				$handle = $this->enqueue("assets/dash-10up-primary-category.js", ["jquery"]);
+				$handle = $this->enqueue("assets/primary-category.js", ["jquery"]);
 
 				// now, before we're done, we need to tell the JS objects
 				// what categories are already chosen for this object so
